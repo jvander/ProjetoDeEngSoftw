@@ -21,7 +21,7 @@
     var pastas = {
         destino: 'client/build',
         app: [
-            'client/app/*dsc.app.js',
+            'client/app/*confaro.app.js',
             'client/app/toast.service.js',
             'client/app/router.app.js',
             'client/app/**/*.js'
@@ -37,7 +37,7 @@
 
 
     gulp.task('app', ['limpar'], function(){
-        console.log('[gulp]: Iniciando a compactacao do app base..');
+        console.log('[gulp]: Iniciando a compactação do app base..');
         var arquivos = pastas.app.concat(pastas.ignorar);
 
         return gulp.src(arquivos)
@@ -56,13 +56,13 @@
     });
 
     gulp.task('jshint', function() {
-        console.log('[gulp]: Iniciando a verifica��o do c�digo..');
+        console.log('[gulp]: Iniciando a verificação do código..');
         var arquivos = pastas.jshint.concat(pastas.ignorar);
 
         return gulp.src(arquivos)
             // Realiza cache dos arquivos ja verificados
             .pipe(cache('jshintCache'))
-            // Analisa o codigo usando o jshint seguindo os padr�es estabelecidos no arquivo .jshintrc
+            // Analisa o c�digo usando o jshint seguindo os padr�es estabelecidos no arquivo .jshintrc
             .pipe(jshint('.jshintrc'))
             // Utiliza o reporter stylish para exibir os resultados
             .pipe(jshint.reporter(stylish));
