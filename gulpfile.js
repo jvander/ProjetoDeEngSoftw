@@ -31,7 +31,8 @@
         ],
         ignorar: [
             '!client/build/**/*.js',
-            '!client/components/**/*.js'
+            '!client/components/**/*.js',
+            '!client/teste/**/*.js'
         ]
     };
 
@@ -62,7 +63,7 @@
         return gulp.src(arquivos)
             // Realiza cache dos arquivos ja verificados
             .pipe(cache('jshintCache'))
-            // Analisa o c�digo usando o jshint seguindo os padr�es estabelecidos no arquivo .jshintrc
+            // Analisa o código usando o jshint seguindo os padr�es estabelecidos no arquivo .jshintrc
             .pipe(jshint('.jshintrc'))
             // Utiliza o reporter stylish para exibir os resultados
             .pipe(jshint.reporter(stylish));

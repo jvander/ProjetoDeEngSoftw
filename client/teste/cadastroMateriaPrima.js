@@ -2,8 +2,6 @@
  * Created by jesus on 11/05/2016.
  */
 
-(function(){
-
 
 "use strict";
 
@@ -14,11 +12,12 @@ var browser = new webdriver.Builder().usingServer().withCapabilities({'browserNa
 
     browser.get('http://localhost:53547/ProjetoDeEngSoftw/client/views/index.html#/');
 
-    browser.findElement(webdriver.By.name('nomeMateriaPrima')).sendKeys("Um nome para Teste");
-    browser.findElement(webdriver.By.name('skuMateriaPrima')).sendKeys("Valor inserido");
+    browser.findElement(webdriver.By.name('nomeMateriaPrima')).sendKeys("Tecido de bolinha amarelinha");
+    browser.findElement(webdriver.By.name('skuMateriaPrima')).sendKeys("0938098");
+    browser.findElement(webdriver.By.name('unidadeMateriaPrima')).sendKeys("KG");
+    browser.findElement(webdriver.By.name('observacaoMateriaPrima')).sendKeys("Este Campo não é obrigatorio");
     browser.findElement(webdriver.By.name('btnCadastrarMateriaPrima')).click();
 
-    })();
 
 /*
 browser.get('http://en.wikipedia.org/wiki/Wiki');

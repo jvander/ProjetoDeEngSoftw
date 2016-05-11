@@ -20,7 +20,7 @@
     function toastApp ($mdToast) {
         var service = {
             message: '',
-            errorMessage: errorMessage,
+            newmessage: newmessage,
             errorMessageBottom: errorMessageBottom
         };
         return service;
@@ -34,13 +34,13 @@
             );
         }*/
 
-        function errorMessage(errorMessage) {
+        function newmessage(errorMessage) {
             this.message = errorMessage;
             $mdToast.show(
                 {
                     controller: 'toastController',
                     controllerAs: 'vm',
-                    templateUrl: 'views/pages/dsctoast.html',
+                    templateUrl: '/ProjetoDeEngSoftw/client/views/forms/toast.html',
                     action: "OK",
                     highlightAction: true,
                     position: "top right",
