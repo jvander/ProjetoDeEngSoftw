@@ -9,7 +9,7 @@
     angular.module('app')
         .controller('cadastroMateriaPrimaController', cadastroMateriaPrimaController);
 
-    function cadastroMateriaPrimaController(toastApp){
+    function cadastroMateriaPrimaController(toastApp,materiaPrimaService){
 
         var self = this;
         self.initcadastroMateriaPrima = initcadastroMateriaPrima;
@@ -33,21 +33,15 @@
 
 
         function excluirMateriaPrima(materiaPrima){
-            console.log(materiaPrima);
+
             toastApp.newmessage('Removido a Materia Prima com o SKU.' + materiaPrima.sku);
             self.isBtnRemoveMateriaPrima = false;
-            self.materiaprima = {
-                nome: "",
-                sku: "",
-                unidade: "",
-                observacao: ""
-            };
-
-
+            self.materiaprima = {nome: "", sku: "", unidade: "", observacao: ""};
         }
         function cadastrarMateriaPrima(materiaPrima){
+            //materiaPrimaService.cadastrar(materiaPrima);
+            //Tratar retorno depois.
             toastApp.newmessage('Cadastro realizado com sucesso para o SKU.' + materiaPrima.sku);
-            console.log(materiaPrima);
             self.isBtnRemoveMateriaPrima = true;
         }
 
