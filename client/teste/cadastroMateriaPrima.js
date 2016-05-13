@@ -12,7 +12,7 @@
 
     var browser = new webdriver.Builder().usingServer().withCapabilities({'browserName': 'chrome' }).build();
 
-    browser.get('http://localhost:53107/ProjetoDeEngSoftw/client/views/index.html#/');
+    browser.get('http://localhost:50479/ProjetoDeEngSoftw/client/views/index.html#/');
 
     browser.findElement(webdriver.By.name('btnCadastrarMateriaPrima')).click();
     browser.sleep(2000);

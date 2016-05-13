@@ -15,13 +15,14 @@
 
     function materiaPrimaService($http) {
 
-        var API_ROUTE_CADASTRARMATERIALPRIMA = '/api/cadastrarmateriaprima/';
-        var API_ROUTE_EXCLUIRMATERIAPRIMA = '/api/excluirmateriaprima';
-
+        var API_ROUTE_CADASTRARMATERIALPRIMA = '/api/materiaprima/cadastrar/';
+        var API_ROUTE_EXCLUIRMATERIAPRIMA = '/api/materiaprima/excluir/';
+        var API_ROUTE_LISTAMATERIAPRIMA = '/api/materiaprima/listartodos/'
 
         var service = {
             cadastrar: cadastrar,
-            excluir: excluir
+            excluir: excluir,
+            listarTodas: listarTodas
 
         };
         return service;
@@ -32,6 +33,10 @@
 
         function excluir(data) {
             return $http.post(API_ROUTE_EXCLUIRMATERIAPRIMA, data);
+        }
+
+        function listarTodas() {
+            return $http.get(API_ROUTE_LISTAMATERIAPRIMA);
         }
 
 
